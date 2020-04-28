@@ -1,12 +1,17 @@
 <template>
-  <checkhome></checkhome>
+  <div>
+    <homeResults></homeResults>
+    <homePagination></homePagination>
+  </div>
 </template>
 
 <script>
-import checkhome from "@/components/home/checkhome.vue";
+import homeResults from "@/components/home/homeResults.vue";
+import homePagination from "@/components/home/homePagination.vue";
 export default {
   components: {
-    checkhome
+    homeResults,
+    homePagination
   }
 };
 </script>

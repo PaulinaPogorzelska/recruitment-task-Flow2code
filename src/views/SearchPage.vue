@@ -1,12 +1,17 @@
 <template>
-  <checksearch></checksearch>
+  <div>
+    <searchResults></searchResults>
+    <searchPagination></searchPagination>
+  </div>
 </template>
 
 <script>
-import checksearch from "@/components/searchPage/checksearch.vue";
+import searchResults from "@/components/searchPage/searchResults.vue";
+import searchPagination from "@/components/searchPage/searchPagination.vue";
 export default {
   components: {
-    checksearch
+    searchResults,
+    searchPagination
   }
 };
 </script>
