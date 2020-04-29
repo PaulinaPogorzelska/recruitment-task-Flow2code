@@ -3,6 +3,7 @@ export default {
   state: {
     films: [],
     filmsFilter: "",
+    sortBy: "popularity.desc",
     maxPageNumber: "",
     currentPageNumber: 1
   },
@@ -17,6 +18,9 @@ export default {
     },
     SET_FILMS_FILTER(state, filter) {
       state.filmsFilter = filter;
+    },
+    SET_SORT_BY(state, sortBy) {
+      state.sortBy = sortBy;
     },
     SET_MAX_PAGE_NUMBER(state, maxPageNumber) {
       state.maxPageNumber = maxPageNumber;
@@ -40,7 +44,7 @@ export default {
           params: {
             page: state.currentPageNumber,
             api_key: process.env.VUE_APP_API_KEY,
-            sort_by: "popularity.desc"
+            sort_by: state.sortBy
           }
         }
       );
