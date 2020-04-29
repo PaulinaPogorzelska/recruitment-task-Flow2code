@@ -1,16 +1,16 @@
 <template>
   <div>
-    <searchResults></searchResults>
+    <SearchFilmList></SearchFilmList>
     <searchPagination></searchPagination>
   </div>
 </template>
 
 <script>
-import searchResults from "@/components/searchPage/searchResults.vue";
+import SearchFilmList from "@/components/searchPage/SearchFilmList.vue";
 import searchPagination from "@/components/searchPage/searchPagination.vue";
 export default {
   components: {
-    searchResults,
+    SearchFilmList,
     searchPagination
   }
 };
