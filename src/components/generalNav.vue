@@ -27,7 +27,7 @@ export default {
       this.$store.commit("RESET_FILM_LIST", this.searchedPhrase);
     },
     resetFilmList() {
-      this.$store.commit("RESET_FILM_LIST", this.searchedPhrase);
+      this.$store.commit("RESET_ONLY_PAGINATION", this.searchedPhrase);
     }
   }
 };

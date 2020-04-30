@@ -34,6 +34,9 @@ export default {
     RESET_FILM_LIST(state) {
       state.currentPageNumber = 1;
       state.films = [];
+    },
+    RESET_ONLY_PAGINATION(state) {
+      state.currentPageNumber = 1;
     }
   },
   actions: {
