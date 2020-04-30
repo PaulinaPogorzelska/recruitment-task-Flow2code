@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="$router.push('/film/' + film.id)">
     <p>{{ film.title }}</p>
     <img :src="setPoster()" />
     <p>{{ film.popularity }}</p>

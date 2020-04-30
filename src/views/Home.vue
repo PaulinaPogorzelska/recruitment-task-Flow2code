@@ -1,20 +1,20 @@
 <template>
   <div>
-    <sortBy></sortBy>
+    <SortBy></SortBy>
     <FilmsList></FilmsList>
-    <homePagination></homePagination>
+    <HomePagination></HomePagination>
   </div>
 </template>
 
 <script>
 import FilmsList from "@/components/home/FilmsList.vue";
-import homePagination from "@/components/home/homePagination.vue";
-import sortBy from "@/components/home/sortBy.vue";
+import HomePagination from "@/components/home/HomePagination.vue";
+import SortBy from "@/components/home/SortBy.vue";
 export default {
   components: {
     FilmsList,
-    homePagination,
-    sortBy
+    HomePagination,
+    SortBy
   }
 };
 </script>

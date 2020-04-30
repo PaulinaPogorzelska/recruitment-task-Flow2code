@@ -1,17 +1,17 @@
 <template>
   <div>
     <SearchFilmList></SearchFilmList>
-    <searchPagination></searchPagination>
+    <SearchPagination></SearchPagination>
   </div>
 </template>
 
 <script>
 import SearchFilmList from "@/components/searchPage/SearchFilmList.vue";
-import searchPagination from "@/components/searchPage/searchPagination.vue";
+import SearchPagination from "@/components/searchPage/SearchPagination.vue";
 export default {
   components: {
     SearchFilmList,
-    searchPagination
+    SearchPagination
   }
 };
 </script>
