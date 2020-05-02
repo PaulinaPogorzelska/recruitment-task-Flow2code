@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <select v-model="selected" @change="setSortBy">
+  <div class="card card-custom p-2">
+    <h2 class="text-center">Sort Results By</h2>
+    <select
+      v-model="selected"
+      @change="setSortBy"
+      class="custom-select bg-secondary"
+    >
       <option value="" selected disabled>Please select sorting</option>
-      <option v-for="(option, key) in sortBy" :value="option.value" :key="key">
-        {{ option.name }}
-      </option>
+      <option
+        v-for="(option, key) in sortBy"
+        :value="option.value"
+        :key="key"
+        >{{ option.name }}</option
+      >
     </select>
-    <p>{{ selected }}</p>
   </div>
 </template>
 
@@ -17,7 +24,7 @@ export default {
       sortBy: [
         { name: "Popularity Descending", value: "popularity.desc" },
         { name: "Popularity Ascending", value: "popularity.asc" },
-        { name: "Orginal title (A-Z)", value: "orginal_title.desc" },
+        { name: "Orginal title (A-Z)", value: "original_title.desc" },
         { name: "Orginal title (Z-A)", value: "original_title.asc" }
       ],
       selected: ""
@@ -31,3 +38,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.card-custom {
+  width: 250px;
+  height: 150px;
+  background-color: #333;
+  margin: 0 auto;
+}
+</style>

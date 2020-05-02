@@ -1,7 +1,9 @@
 <template>
   <div>
-    <SortBy></SortBy>
-    <FilmsList></FilmsList>
+    <div class="homeContent">
+      <SortBy class="sort"></SortBy>
+      <FilmsList></FilmsList>
+    </div>
     <HomePagination></HomePagination>
   </div>
 </template>
@@ -18,3 +20,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.homeContent {
+  display: flex;
+  margin: 30px;
+}
+.sort {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .homeContent {
+    flex-direction: column;
+  }
+}
+</style>

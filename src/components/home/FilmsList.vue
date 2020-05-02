@@ -1,10 +1,13 @@
 <template>
   <div>
-    <FilmItem
-      v-for="(film, key) in getFilms"
-      :key="key"
-      :film="film"
-    ></FilmItem>
+    <div class="row justify-content-around">
+      <FilmItem
+        v-for="(film, key) in getFilms"
+        :key="key"
+        :film="film"
+        class="col-6 col-lg-4 col-xl-3"
+      ></FilmItem>
+    </div>
   </div>
 </template>
 
