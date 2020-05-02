@@ -33,6 +33,7 @@ export default {
   methods: {
     setSortBy() {
       this.$store.commit("SET_SORT_BY", this.selected);
+      this.$store.commit("RESET_ONLY_PAGINATION");
       this.$store.dispatch("fetchFilms");
     }
   }

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <p>{{ getFilmDetails.title }}</p>
-    <p>{{ setGenres() }}</p>
-    <p>{{ getFilmDetails.overview }}</p>
-    <p>{{ setCountries() }}</p>
+  <div class="container card bg-dark container-custom">
+    <p>Title:{{ getFilmDetails.title }}</p>
+    <p v-if="setGenres()">Genre: {{ setGenres() }}</p>
+    <p v-if="getFilmDetails.overview">{{ getFilmDetails.overview }}</p>
+    <p v-if="setCountries()">Country of production: {{ setCountries() }}</p>
     <a :href="'https://www.imdb.com/title/' + getFilmDetails.imdb_id">
       See film on IMDb
     </a>
@@ -40,3 +40,21 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.container-custom {
+  margin-top: 3vh;
+  padding: 20px;
+}
+
+p {
+  line-height: 30px;
+}
+
+a {
+  color: gray;
+}
+a:hover {
+  color: yellow;
+}
+</style>

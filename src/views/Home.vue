@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="homeContent">
-      <SortBy class="sort"></SortBy>
+  <div class="homeContent">
+    <SortBy class="sort"></SortBy>
+    <div>
       <FilmsList></FilmsList>
+      <HomePagination></HomePagination>
     </div>
-    <HomePagination></HomePagination>
   </div>
 </template>
 

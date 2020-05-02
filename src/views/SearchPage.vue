@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container container-custom">
     <SearchFilmList></SearchFilmList>
     <SearchPagination></SearchPagination>
   </div>
@@ -15,3 +15,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.container-custom {
+  margin: 30px auto;
+}
+</style>

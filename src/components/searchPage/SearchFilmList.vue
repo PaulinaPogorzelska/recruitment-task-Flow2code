@@ -1,13 +1,11 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-around">
-      <FilmItem
-        v-for="(film, key) in getFilms"
-        :key="key"
-        :film="film"
-        class="col-6 col-lg-4 col-xl-3"
-      ></FilmItem>
-    </div>
+  <div class="row justify-content-around">
+    <FilmItem
+      v-for="(film, key) in getFilms"
+      :key="key"
+      :film="film"
+      class="col-6 col-lg-4 col-xl-3"
+    ></FilmItem>
   </div>
 </template>
 
@@ -20,11 +18,6 @@ export default {
   },
   computed: {
     ...mapGetters(["getFilms"])
-  },
-  methods: {
-    checkDetails(id) {
-      this.$store.dispatch("fetchFilmDetails", id);
-    }
   }
 };
 </script>
