@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-sm sticky-top navbar-dark navbar-color">
-    <img src="@/assets/cinema.png" class="navbar-brand" />
+    <router-link to="/"
+      ><img src="@/assets/cinema.png" class="navbar-brand"
+    /></router-link>
     <button
       class="navbar-toggler"
       data-toggle="collapse"
