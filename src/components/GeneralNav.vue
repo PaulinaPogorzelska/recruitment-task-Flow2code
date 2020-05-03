@@ -26,6 +26,10 @@
             type="search"
             placeholder="Let's find a movie"
             v-model="searchedPhrase"
+            @keyup.enter="
+              setUpSearchedPhrase;
+              routerLink;
+            "
           />
           <router-link to="/search">
             <i
@@ -54,6 +58,9 @@ export default {
         this.$store.dispatch("fetchSearchedFilms");
       }
       this.searchedPhrase = "";
+    },
+    routerLink() {
+      this.$router.push("serach");
     },
     resetFilmList() {
       this.$store.commit("RESET_FILM_LIST");
