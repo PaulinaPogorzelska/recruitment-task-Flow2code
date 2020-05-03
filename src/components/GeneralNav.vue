@@ -27,8 +27,8 @@
             placeholder="Let's find a movie"
             v-model="searchedPhrase"
             @keyup.enter="
-              setUpSearchedPhrase;
-              routerLink;
+              setUpSearchedPhrase();
+              routerLink();
             "
           />
           <router-link to="/search">
@@ -60,7 +60,7 @@ export default {
       this.searchedPhrase = "";
     },
     routerLink() {
-      this.$router.push("serach");
+      this.$router.push("search");
     },
     resetFilmList() {
       this.$store.commit("RESET_FILM_LIST");
@@ -75,22 +75,18 @@ img {
   height: 50px;
   width: 50px;
 }
-
 .navbar-color {
   background-color: #333;
 }
-
 .form-control-custom {
   background-color: #eee;
   width: 80%;
 }
-
 .router-link {
   color: white;
   text-decoration: none;
   line-height: 38px;
 }
-
 .router-link:hover {
   color: yellow;
 }
