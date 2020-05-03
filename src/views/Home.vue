@@ -33,6 +33,7 @@ export default {
 @media (max-width: 768px) {
   .homeContent {
     flex-direction: column;
+    margin: 10px;
   }
 }
 </style>

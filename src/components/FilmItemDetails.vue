@@ -1,12 +1,13 @@
 <template>
   <div class="container card bg-dark container-custom">
-    <p>Title:{{ getFilmDetails.title }}</p>
+    <p v-if="getFilmDetails.title">Title:{{ getFilmDetails.title }}</p>
     <p v-if="setGenres()">Genre: {{ setGenres() }}</p>
     <p v-if="getFilmDetails.overview">{{ getFilmDetails.overview }}</p>
     <p v-if="setCountries()">Country of production: {{ setCountries() }}</p>
     <a :href="'https://www.imdb.com/title/' + getFilmDetails.imdb_id">
       See film on IMDb
     </a>
+    <p v-if="getFilmDetails.data">{{ getFilmDetails.data.status_message }}</p>
   </div>
 </template>
 

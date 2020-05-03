@@ -1,10 +1,10 @@
 <template>
-  <div class="card card-custom p-2">
-    <h2 class="text-center">Sort Results By</h2>
+  <div class="card card-custom">
+    <h2 class="text-center card-header">Sort Results By</h2>
     <select
       v-model="selected"
       @change="setSortBy"
-      class="custom-select bg-secondary"
+      class="custom-select bg-secondary m-auto select-custom"
     >
       <option value="" selected disabled>Please select sorting</option>
       <option
@@ -43,8 +43,25 @@ export default {
 <style scoped>
 .card-custom {
   width: 250px;
-  height: 150px;
+  height: 140px;
   background-color: #333;
   margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  padding: 8px 10px;
+}
+
+.select-custom {
+  width: 94%;
+}
+
+@media (max-width: 768px) {
+  .card-custom {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 </style>

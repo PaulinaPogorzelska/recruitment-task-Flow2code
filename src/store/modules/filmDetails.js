@@ -13,14 +13,13 @@ export default {
   },
   actions: {
     async fetchFilmDetails({ commit }, id) {
-      const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/" + id,
-        {
+      const response = await axios
+        .get("https://api.themoviedb.org/3/movie/" + id, {
           params: {
             api_key: process.env.VUE_APP_API_KEY
           }
-        }
-      );
+        })
+        .catch(error => commit("SET_FILM_DETAILS", error.response));
       commit("SET_FILM_DETAILS", response.data);
     }
   }

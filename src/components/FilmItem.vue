@@ -1,5 +1,5 @@
 <template>
-  <div class="card-deck card-columns">
+  <div class="card-deck card-columns card-flex">
     <div
       @click="$router.push('/film/' + film.id)"
       class="card bg-dark text-white card-custom"
@@ -57,5 +57,9 @@ p {
   box-shadow: 0 0 20px 1px #ffff4d;
   border-color: #ffff80;
   cursor: pointer;
+}
+
+.card-flex {
+  display: flex;
 }
 </style>
