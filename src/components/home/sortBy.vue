@@ -6,7 +6,7 @@
       @change="setSortBy"
       class="custom-select bg-secondary m-auto select-custom"
     >
-      <option value="" selected disabled>Please select sorting</option>
+      <option selected disabled>Please select sorting</option>
       <option
         v-for="(option, key) in sortBy"
         :value="option.value"
