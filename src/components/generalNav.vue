@@ -49,8 +49,6 @@ export default {
       this.$store.commit("SET_FILMS_FILTER", this.searchedPhrase);
       if (this.searchedPhrase) {
         this.$store.dispatch("fetchSearchedFilms");
-      } else {
-        console.log(1);
       }
       this.searchedPhrase = "";
     },

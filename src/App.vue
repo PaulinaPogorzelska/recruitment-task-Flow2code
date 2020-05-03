@@ -11,6 +11,9 @@ export default {
   name: "App",
   components: {
     GeneralNav
+  },
+  created() {
+    this.$store.dispatch("fetchImgConfig");
   }
 };
 </script>

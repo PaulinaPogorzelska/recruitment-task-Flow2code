@@ -5,17 +5,18 @@
       class="card bg-dark text-white card-custom"
     >
       <img :src="setPoster()" class="card-img-top" />
-      <h3 class="bg-dark">{{ film.title }}</h3>
-      <p v-if="originalTitle()" class="bg-dark">
+      <h3>{{ film.title }}</h3>
+      <p v-if="originalTitle()">
         {{ "(" + this.film.original_title + ")" }}
       </p>
-      <p class="bg-dark">Popularity: {{ film.popularity }}</p>
-      <p class="bg-dark">Votes: {{ film.vote_count }}</p>
+      <p>Popularity: {{ film.popularity }}</p>
+      <p>Votes: {{ film.vote_count }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   props: ["film"],
   data() {
@@ -23,10 +24,17 @@ export default {
       posterPath: ""
     };
   },
+  computed: {
+    ...mapGetters(["getConfigImg"])
+  },
   methods: {
     setPoster() {
-      if (this.film.poster_path) {
-        return "https://image.tmdb.org/t/p/w500" + this.film.poster_path;
+      if (this.film.poster_path && this.getConfigImg.images) {
+        return (
+          this.getConfigImg.images.base_url +
+          this.getConfigImg.images.poster_sizes[5] +
+          this.film.poster_path
+        );
       } else {
         return require("../assets/placeholder.png");
       }
