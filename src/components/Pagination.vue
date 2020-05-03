@@ -19,16 +19,24 @@ export default {
     prevPage() {
       if (this.getCurrentPageNumber > 1) {
         this.$store.commit("DECREMENT_PAGE");
-        this.$store.dispatch("fetchFilms");
+        if (this.$router.currentRoute.name === "home") {
+          this.$store.dispatch("fetchFilms");
+        } else {
+          this.$store.dispatch("fetchSearchedFilms");
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     nextPage() {
       if (this.getCurrentPageNumber < this.getMaxPageNumber) {
         this.$store.commit("INCREMENT_PAGE");
-        this.$store.dispatch("fetchFilms");
+        if (this.$router.currentRoute.name === "home") {
+          this.$store.dispatch("fetchFilms");
+        } else {
+          this.$store.dispatch("fetchSearchedFilms");
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 };

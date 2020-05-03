@@ -1,7 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-sm sticky-top navbar-dark navbar-color">
     <router-link to="/"
-      ><img src="@/assets/cinema.png" class="navbar-brand"
+      ><img
+        src="@/assets/cinema.png"
+        class="navbar-brand"
+        @click="resetFilmList"
     /></router-link>
     <button
       class="navbar-toggler"
@@ -12,8 +15,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item mr-4">
-          <router-link to="/" @click="resetFilmList" class="router-link">
+        <li class="nav-item mr-4" @click="resetFilmList">
+          <router-link to="/" class="router-link">
             Home
           </router-link>
         </li>
@@ -53,7 +56,8 @@ export default {
       this.searchedPhrase = "";
     },
     resetFilmList() {
-      this.$store.commit("RESET_ONLY_PAGINATION", this.searchedPhrase);
+      this.$store.commit("RESET_FILM_LIST");
+      this.$store.dispatch("fetchFilms");
     }
   }
 };

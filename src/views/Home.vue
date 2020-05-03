@@ -3,19 +3,19 @@
     <SortBy class="sort"></SortBy>
     <div>
       <FilmsList></FilmsList>
-      <HomePagination></HomePagination>
+      <Pagination></Pagination>
     </div>
   </div>
 </template>
 
 <script>
 import FilmsList from "@/components/home/FilmsList.vue";
-import HomePagination from "@/components/home/HomePagination.vue";
+import Pagination from "@/components/Pagination.vue";
 import SortBy from "@/components/home/SortBy.vue";
 export default {
   components: {
     FilmsList,
-    HomePagination,
+    Pagination,
     SortBy
   }
 };
