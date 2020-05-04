@@ -4,6 +4,7 @@
       @click="prevPage"
       class="btn btn-secondary btn-outline-dark ml-2"
       v-if="getFilms.length != 0"
+      :disabled="isDisabledPrev()"
     >
       Previous
     </button>
@@ -11,6 +12,7 @@
       @click="nextPage"
       class="btn btn-secondary btn-outline-dark ml-2"
       v-if="getFilms.length != 0"
+      :disabled="isDisabledNext()"
     >
       Next
     </button>
@@ -45,6 +47,12 @@ export default {
         }
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+    },
+    isDisabledPrev() {
+      return this.getCurrentPageNumber <= 1;
+    },
+    isDisabledNext() {
+      return this.getCurrentPageNumber >= this.getMaxPageNumber;
     }
   }
 };
