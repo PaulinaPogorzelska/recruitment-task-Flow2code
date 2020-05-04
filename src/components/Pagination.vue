@@ -1,9 +1,17 @@
 <template>
   <div>
-    <button @click="prevPage" class="btn btn-secondary btn-outline-dark ml-2">
+    <button
+      @click="prevPage"
+      class="btn btn-secondary btn-outline-dark ml-2"
+      v-if="getFilms.length != 0"
+    >
       Previous
     </button>
-    <button @click="nextPage" class="btn btn-secondary btn-outline-dark ml-2">
+    <button
+      @click="nextPage"
+      class="btn btn-secondary btn-outline-dark ml-2"
+      v-if="getFilms.length != 0"
+    >
       Next
     </button>
   </div>
@@ -13,7 +21,7 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getMaxPageNumber", "getCurrentPageNumber"])
+    ...mapGetters(["getMaxPageNumber", "getCurrentPageNumber", "getFilms"])
   },
   methods: {
     prevPage() {
