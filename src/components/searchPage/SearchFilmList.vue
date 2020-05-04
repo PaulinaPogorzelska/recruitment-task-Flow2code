@@ -1,11 +1,11 @@
 <template>
   <div class="row justify-content-around">
-    <h3
+    <p
       v-if="getFilms.length === 0"
-      class="card bg-dark border-warning text-warning p-3"
+      class="card bg-dark border-danger text-danger p-4"
     >
       Let's find a movie - enter your title
-    </h3>
+    </p>
     <FilmItem
       v-for="(film, key) in getFilms"
       :key="key"
